@@ -1,0 +1,65 @@
+body{
+    background-color: grey;
+}
+
+div#game-container{
+    border: 2px solid green;
+    height: 400px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.letter{
+    background-color: aqua;
+    height: 50px;
+    width: 50px;
+}
+
+div#keyboard-container{
+    border: 2px solid green;
+    height: 200px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.key{
+    background-color: aqua;
+    height: 50px;
+    width: 50px;
+    margin: 2px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+div.keyboard#qwer-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div.keyboard#asdf-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div.keyboard#zxcv-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
