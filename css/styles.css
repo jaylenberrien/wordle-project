@@ -30,7 +30,19 @@
 }
 
 #start{
-display: block;
+    height: 60px;
+    width: 150px;
+    font-size: 22px;
+    color: white;
+    background-color: green;
+}
+
+#startup-content{
+    text-align: center;
+}
+
+#startup-text{
+    width: 00px;
 }
 
 body{
