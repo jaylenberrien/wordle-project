@@ -17,6 +17,21 @@
     z-index: 1;
 }
 
+#start-popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+}
+
+#start{
+display: block;
+}
 
 body{
     background-color: grey;
@@ -41,6 +56,7 @@ div#game-container{
     background-color: aqua;
     height: 50px;
     width: 50px;
+    
 }
 
 div#keyboard-container{
@@ -62,6 +78,10 @@ div#keyboard-container{
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+
+.key:active{
+    background-color: rgb(31, 165, 165);
 }
 
 div.keyboard#qwer-row{
