@@ -92,6 +92,10 @@ div#keyboard-container{
     justify-content: center;
 }
 
+#Enter{
+    width: 70px;
+}
+
 .key:active{
     background-color: rgb(31, 165, 165);
 }
