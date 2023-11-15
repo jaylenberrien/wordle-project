@@ -24,8 +24,42 @@ function getRandomindex(min, max){
 }
 
 
-gameWord = fiveWords[(Math.round(getRandomindex()))]
-
+let gameWord = fiveWords[(Math.round(getRandomindex()))]
 
 console.log(gameWord)
+
+//making the keyboard fucntional
+
+let keys = document.querySelectorAll("key");
+
+keys.addEventListener("click", handler(evt))
+    console.log(Event.target)
+
+//checking to see what letters are right/wrong in the users inputs
+
+let userGuess = ""
+let GuessletterArray = []
+function checkLetters(){
+    for (let i = 0; i <= gameWord.length; i++){
+        for (let j = 0; i <= userGuess.length; i++){
+
+        }
+    }
+}
+
+checkUserWord(){
+    if (userGuess === gameWord){
+        console.log("YOU WONNNN")
+    }
+    else if (userGuess != gameWord){
+        
+    }
+}
+//win con 
+
+
+
+//lose con
+
+//restart game button
 

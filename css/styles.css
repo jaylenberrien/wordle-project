@@ -3,6 +3,7 @@
 #main-title{
     color: rgb(32, 30, 30);
     text-align: center;
+    margin-right: auto;
     font-size: 60px;
     position: relative;
     z-index: 2;
@@ -13,7 +14,9 @@
     width: 150x;
     position: relative;
     bottom: 160px;
-    left: 400px;
+    text-align: center;
+    margin-left: 55%;
+    margin-right: auto;
     z-index: 1;
 }
 
@@ -56,6 +59,10 @@ div#game-container{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -9%;
+    margin-bottom: 50px;
 }
 
 .row{
@@ -78,6 +85,8 @@ div#keyboard-container{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .key{
