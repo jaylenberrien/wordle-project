@@ -13,35 +13,36 @@
     </div>
 </header>
 <body>
-    <!-- <div id="start-popup">
+    <div id="start-popup">
         <div id="startup-content">
         <h1 id="Welcome">Welcome</h1>
         <p id ="startup-text">
             <ul>
                 <li>The color of the tiles will change after you submit your word</li>
+                <div id="space"></div>
                 <li>A yellow tile indicates that you picked the right letter but it’s in the wrong spot</li>
                 <div class="row" id="example">
-                    <div class="key" id="example-letter1">W</div>
-                    <div class="key">O</div>
-                    <div class="key">R</div>
-                    <div class="key">L</div>
-                    <div class="key">D</div>
+                    <div class="key fakeKey" id="example-letter1">W</div>
+                    <div class="key fakeKey">O</div>
+                    <div class="key fakeKey">R</div>
+                    <div class="key fakeKey">L</div>
+                    <div class="key fakeKey">D</div>
                 </div>
                 <li>The green tile indicates that you picked the right letter in the correct spot</li>
                 <div class="row" id="example">
-                    <div class="key">C</div>
-                    <div class="key">H</div>
-                    <div class="key" id="example-letter2">I</div>
-                    <div class="key">L</div>
-                    <div class="key">D</div>
+                    <div class="key fakeKey">C</div>
+                    <div class="key fakeKey">H</div>
+                    <div class="key fakeKey" id="example-letter2">I</div>
+                    <div class="key fakeKey">L</div>
+                    <div class="key fakeKey">D</div>
                 </div>
                 <li>The gray tile indicates that the letter you picked is not included in the word at all.</li>
                 <div class="row" id="example">
-                    <div class="key">T</div>
-                    <div class="key">H</div>
-                    <div class="key">E</div>
-                    <div class="key">R</div>
-                    <div class="key" id="example-letter3">E</div>
+                    <div class="key fakeKey">T</div>
+                    <div class="key fakeKey">H</div>
+                    <div class="key fakeKey">E</div>
+                    <div class="key fakeKey">R</div>
+                    <div class="key fakeKey" id="example-letter3">E</div>
                 </div>
                 <li>You have six tries, and it is a five letter word that you have to guess </li>
             </ul>
@@ -49,44 +50,44 @@
             
         <button id="start" type="button" value="Start Game">Start Game</button>
     </div>
-    </div> -->
+    </div>
     <div id="game-container">
-        <div class="row">
+        <div class="row" id="row1">
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
         </div>
-        <div class="row">
+        <div class="row" id="row2">
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
         </div>
-        <div class="row">
+        <div class="row" id="row3">
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
         </div>
-        <div class="row">
+        <div class="row"id="row4">
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
         </div>
-        <div class="row">
+        <div class="row"id="row5">
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
         </div>
-        <div class="row">
+        <div class="row"id="row6">
             <div class="letter"></div>
             <div class="letter"></div>
             <div class="letter"></div>
@@ -97,37 +98,37 @@
 
     <div id="keyboard-container"> 
         <div class ="keyboard" id="qwer-row">
-            <div class ="key" id="q">q</div>
-            <div class ="key" id="w">w</div>
-            <div class ="key" id="e">e</div>
-            <div class ="key" id="r">r</div>
-            <div class ="key" id="t">t</div>
-            <div class ="key" id="y">y</div>
-            <div class ="key" id="u">u</div>
-            <div class ="key" id="i">i</div>
-            <div class ="key" id="o">o</div>
-            <div class ="key" id="p">p</div>
+            <div class ="key" id="q">Q</div>
+            <div class ="key" id="w">W</div>
+            <div class ="key" id="e">E</div>
+            <div class ="key" id="r">R</div>
+            <div class ="key" id="t">T</div>
+            <div class ="key" id="y">Y</div>
+            <div class ="key" id="u">U</div>
+            <div class ="key" id="i">I</div>
+            <div class ="key" id="o">O</div>
+            <div class ="key" id="p">P</div>
         </div>
         <div class ="keyboard" id="asdf-row">
-            <div class ="key" id="a">a</div>
-            <div class ="key" id="s">s</div>
-            <div class ="key" id="d">d</div>
-            <div class ="key" id="f">f</div>
-            <div class ="key" id="g">g</div>
-            <div class ="key" id="h">h</div>
-            <div class ="key" id="j">j</div>
-            <div class ="key" id="k">k</div>
-            <div class ="key" id="l">l</div>
+            <div class ="key" id="a">A</div>
+            <div class ="key" id="s">S</div>
+            <div class ="key" id="d">D</div>
+            <div class ="key" id="f">F</div>
+            <div class ="key" id="g">G</div>
+            <div class ="key" id="h">H</div>
+            <div class ="key" id="j">J</div>
+            <div class ="key" id="k">K</div>
+            <div class ="key" id="l">L</div>
             <div class ="key" id="Delete">Delete</div>
         </div>
         <div class ="keyboard" id="zxcv-row">
-            <div class ="key" id="z">z</div>
-            <div class ="key" id="x">x</div>
-            <div class ="key" id="c">c</div>
-            <div class ="key" id="v">v</div>
-            <div class ="key" id="b">b</div>
-            <div class ="key" id="n">n</div>
-            <div class ="key" id="m">m</div>
+            <div class ="key" id="z">Z</div>
+            <div class ="key" id="x">X</div>
+            <div class ="key" id="c">C</div>
+            <div class ="key" id="v">V</div>
+            <div class ="key" id="b">B</div>
+            <div class ="key" id="n">N</div>
+            <div class ="key" id="m">M</div>
             <div class ="key" id="Enter">Enter</div>
         </div>
     </div>

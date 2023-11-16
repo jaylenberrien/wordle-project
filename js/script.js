@@ -1,5 +1,14 @@
 
+const startbtn = document.getElementById("start");
 
+
+startbtn.addEventListener("click", startScreen);
+
+const startScr = document.getElementById("start-popup")
+
+function startScreen(evt){
+    startScr.remove()
+}
 
 function startGame(){
     
@@ -448,14 +457,28 @@ console.log(words[gameWord])
 //making the keyboard fucntional
 
 const keys = Array.from(document.querySelectorAll(".key"));
-    
+const row1 = document.querySelector("#row1");
+const row2 = document.querySelector("#row2");
+const row3 = document.querySelector("#row3");
+const row4 = document.querySelector("#row4");
+const row5 = document.querySelector("#row5"); 
+const row6 = document.querySelector("#row6");
+let userLetters = document.querySelector(".letter")
     
 keys.forEach(function(key) {
     key.addEventListener("click", handleClick);
 });
 
 function handleClick(evt){
-    console.log("type stuff");
+    
+
+    // for (userLetters in row1){
+    //     document.row1.userLetters.innerText("test");
+    // }
+
+
+
+
 }
 
 //checking to see what letters are right/wrong in the users inputs
@@ -470,6 +493,9 @@ function checkLetters(){
     }
 }
 
+
+//win con 
+
 function checkUserWord(){
     if (userGuess === gameWord){
         console.log("YOU WONNNN")
@@ -478,9 +504,6 @@ function checkUserWord(){
         
     }
 }
-//win con 
-
-
 
 //lose con
 

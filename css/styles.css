@@ -60,11 +60,8 @@ ul{
     font-size: 22px;
     color: white;
     background-color: green;
-    animation-name: breathe;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
     margin-top: 30px;
+    
 }
 
 @keyframes breathe {
@@ -83,8 +80,8 @@ ul{
     text-align: center;
 }
 
-#startup-text{
-    /* font-size: 10px;; */
+#space{
+    height: 20px;
 }
 
 #example-letter1{
@@ -99,12 +96,17 @@ ul{
     background-color: rgb(82, 81, 81);
 }
 
+#example.row{
+    justify-content: center;
+}
+
 li{
     font-size: 20px;
 }
 
 body{
-    background-color: rgb(209, 172, 7);;
+    background-color: rgb(209, 172, 7);
+    font-family: cursive;
 }
 
 div#game-container{
@@ -129,6 +131,14 @@ div#game-container{
     background-color: rgb(175, 124, 13);
     height: 50px;
     width: 50px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    border:1px solid rgb(32, 30, 30)
     
 }
 
@@ -153,6 +163,8 @@ div#keyboard-container{
     align-items: center;
     justify-content: center;
     color: white;
+    font-size: 17px;
+    border:1px solid rgb(32, 30, 30)
 
 }
 
