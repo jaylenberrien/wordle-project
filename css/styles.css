@@ -50,6 +50,23 @@ ul{
     font-size: 22px;
     color: white;
     background-color: green;
+    animation-name: breathe;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    margin-top: 30px;
+}
+
+@keyframes breathe {
+    0%{
+        height: 60px;
+        width: 150px; 
+    }
+
+    100%{
+        height: 80px;
+        width: 170px;
+    }
 }
 
 #startup-content{
