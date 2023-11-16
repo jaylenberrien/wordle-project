@@ -33,7 +33,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: blueviolet;
+    background-color: grey;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.example{
+    margin: 100px;
 }
 
 #start{
@@ -53,7 +61,7 @@
 }
 
 body{
-    background-color: grey;
+    background-color: rgb(209, 172, 7);;
 }
 
 div#game-container{
@@ -75,7 +83,7 @@ div#game-container{
 }
 
 .letter{
-    background-color: aqua;
+    background-color: rgb(175, 124, 13);
     height: 50px;
     width: 50px;
     
@@ -92,7 +100,7 @@ div#keyboard-container{
 }
 
 .key{
-    background-color: aqua;
+    background-color: rgb(175, 124, 13);
     height: 50px;
     width: 50px;
     margin: 2px;
@@ -101,6 +109,8 @@ div#keyboard-container{
     text-align: center;
     align-items: center;
     justify-content: center;
+    color: white;
+
 }
 
 #Enter{
@@ -108,7 +118,11 @@ div#keyboard-container{
 }
 
 .key:active{
-    background-color: rgb(31, 165, 165);
+    background-color: rgb(199, 140, 14);
+}
+
+.key:hover{
+    border: 0.5px solid white;
 }
 
 div.keyboard#qwer-row{

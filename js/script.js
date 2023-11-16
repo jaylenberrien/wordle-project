@@ -2,59 +2,61 @@ let words = require('an-array-of-english-words')
 
 
 
-function startGame(){
+// function startGame(){
     
-}
+// }
 
-//how we get the word for the game
-let fiveWords = []
+// //how we get the word for the game
+// let fiveWords = []
 
-for(let i = 0; i <= words.length; i++){
-    if(words[i].length === 5){
-        fiveWords.push(words[i])
-    }
-    else{
-        i++
-    }
-}
-
-
-function getRandomindex(min, max){
-    return Math.random() * (6458 - 0) + 0;
-}
+// for(let i = 0; i <= words.length; i++){
+//     if(words[i].length === 5){
+//         fiveWords.push(words[i])
+//     }
+//     else{
+//         i++
+//     }
+// }
 
 
-let gameWord = fiveWords[(Math.round(getRandomindex()))]
+// function getRandomindex(min, max){
+//     return Math.random() * (6458 - 0) + 0;
+// }
 
-console.log(gameWord)
 
-//making the keyboard fucntional
+// let gameWord = fiveWords[(Math.round(getRandomindex()))]
 
-let keys = document.querySelectorAll("key");
+// console.log(gameWord)
 
-keys.addEventListener("click", handler(evt))
-    console.log(Event.target)
+// //making the keyboard fucntional
 
-//checking to see what letters are right/wrong in the users inputs
+// let keys = document.querySelectorAll("key");
 
-let userGuess = ""
-let GuessletterArray = []
-function checkLetters(){
-    for (let i = 0; i <= gameWord.length; i++){
-        for (let j = 0; i <= userGuess.length; i++){
+// keys.addEventListener("click", handler(evt))
+//     console.log(Event.target)
 
-        }
-    }
-}
+// //checking to see what letters are right/wrong in the users inputs
 
-checkUserWord(){
-    if (userGuess === gameWord){
-        console.log("YOU WONNNN")
-    }
-    else if (userGuess != gameWord){
+// let userGuess = ""
+// let GuessletterArray = []
+// function checkLetters(){
+//     for (let i = 0; i <= gameWord.length; i++){
+//         for (let j = 0; i <= userGuess.length; i++){
+
+//         }
+//     }
+// }
+
+// function checkUserWord(){
+//     if (userGuess === gameWord){
+//         console.log("YOU WONNNN")
+//     }
+//     else if (userGuess != gameWord){
         
-    }
-}
+//     }
+// }
+
+console.log(words)
 //win con 
 
 
