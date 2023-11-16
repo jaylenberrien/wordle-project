@@ -1,4 +1,16 @@
+header{
+    background-color: rgb(175, 124, 13);
+    margin-top: 0;
+    border-bottom: 2px solid black;
+    margin-bottom: 160px;
+}
 
+#title-div{
+    margin: 0;
+    margin-right: -5px;
+    height: 150px;
+    width: 100%;
+}
 
 #main-title{
     color: rgb(32, 30, 30);
@@ -7,11 +19,11 @@
     font-size: 60px;
     position: relative;
     z-index: 2;
+    margin-top: -8px;
+    padding-top: 25px;
+    
 }
 
-.key,.letter{
-    border-radius: 10px;
-}
 
 #bee{
     height:150px;
@@ -34,6 +46,10 @@
     }
 }
 
+.key,.letter{
+    border-radius: 10px;
+}
+
 #start-popup{
     position: fixed;
     top: 0;
@@ -46,8 +62,21 @@
     background-color: grey;
 }
 
+#line{
+    border: 1px dashed black
+}
+
+#startup-content{
+    margin-top: 10px;
+    margin-left: -300px;
+}
+
 ul{
-    list-style-type: none;
+    padding:0;
+}
+
+#hint{
+    list-style: none;
 }
 
 #example{
@@ -60,7 +89,7 @@ ul{
     font-size: 22px;
     color: white;
     background-color: green;
-    margin-top: 30px;
+    margin-top: 50px;
     
 }
 
@@ -76,13 +105,7 @@ ul{
     }
 }
 
-#startup-content{
-    text-align: center;
-}
 
-#space{
-    height: 20px;
-}
 
 #example-letter1{
     background-color: rgb(173, 173, 2);
@@ -97,16 +120,20 @@ ul{
 }
 
 #example.row{
-    justify-content: center;
+    justify-content:flex-start
 }
 
 li{
     font-size: 20px;
 }
 
+
 body{
     background-color: rgb(209, 172, 7);
     font-family: cursive;
+    margin-left: 0;
+    margin-right: 0;
+    height: 100vh;
 }
 
 div#game-container{
@@ -119,6 +146,7 @@ div#game-container{
     margin-right: auto;
     margin-top: -9%;
     margin-bottom: 50px;
+    
 }
 
 .row{
@@ -150,6 +178,7 @@ div#keyboard-container{
     justify-content: space-evenly;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: -500px;
 }
 
 .key{
