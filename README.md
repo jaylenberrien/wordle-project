@@ -13,5 +13,5 @@ I used HTML, CSS, and Vanilla Js.
 
 You can find the game here:
 
-
+https://jaylenberrien.github.io/wordle-project/
 
