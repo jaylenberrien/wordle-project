@@ -453,11 +453,10 @@ let words = [
 function getRandomindex(min, max){
     return Math.floor(Math.random() * (427 - 0) + 0);
 }
+let gameWordIndex = [(Math.round(getRandomindex()))]
+let gameWord = words[gameWordIndex];
 
-
-let gameWord = [(Math.round(getRandomindex()))]
-
-console.log(words[gameWord])
+console.log(gameWord)
 
 //making the keyboard fucntional
 
@@ -490,45 +489,149 @@ function handleClick(evt){
 }
 
 //checking to see what letters are right/wrong in the users inputs
-
+let i = 0
+let j = 0
 let correctLetters = 0;
 
-function checkLetters(){
-    let userRow = userGuess[userGuessTracker].join("").toUpperCase();
+function checkLetters(userGuess){
+    
+    let isItIRight = gameWord.includes(userGuess[i]);
+    let letterInThatSpot = gameWord.charAt(j);
 
-    for (let i = 0; i < userRow; i++){
-        let userLetter = userRow.charAt(i);
-        let wordLetter = gameWord.charAt(i);
-        let isInWord = words[gameWord].includes(userLetter);
+    let row1 = document.querySelector("#row1");
+    let row2 = document.querySelector("#row2");
+    let row3 = document.querySelector("#row3");
+    let row4 = document.querySelector("#row4");
+    let row5 = document.querySelector("#row5");
+    let row6 = document.querySelector("#row6");
 
-        if(userLetter === wordLetter){
-            keys[i].style.backgroundColor = "green";
-            letters[i].style.backgroundColor = "green";
+    for (let counter = 0; counter < row1.length; j++){
+        if (!isItIRight){
+            letters[i][j].style.backgroundColor = "rgb(82, 81, 81)";
+            keys[i][j].style.backgroundColor = "rgb(82, 81, 81)";
+        }
+        else if (isItIRight && letterInThatSpot) {
+            keys[i][j].style.backgroundColor = "green";
+            letters[i][j].style.backgroundColor = "green;";
             correctLetters++;
         }
-        else if(isInWord){
-            keys[i].style.backgroundColor = "rgb(173, 173, 2)";
-            letters[i].style.backgroundColor = "rgb(173, 173, 2)";
+        else{ 
+            keys[i][j].style.backgroundColor = "rgb(173, 173, 2)";
+            letters[i][j].style.backgroundColor = "rgb(173, 173, 2)";   
         }
-        else{
-            keys[i].style.backgroundColor = "rgb(82, 81, 81);";
-            letters[i].style.backgroundColor = "rgb(82, 81, 81);";
+        if (j == 5){
+            i++
         }
     }
+    for (let counter = 0; counter < row2.length; j++){
+        if (!isItIRight){
+            letters[i][j].style.backgroundColor = "rgb(82, 81, 81)";
+            keys[i][j].style.backgroundColor = "rgb(82, 81, 81)";
+        }
+        else if (isItIRight) {
+            keys[i][j].style.backgroundColor = "green";
+            letters[i][j].style.backgroundColor = "rgb(82, 81, 81);";
+        }
+        else{ 
+            keys[i][j].style.backgroundColor = "rgb(173, 173, 2)";
+            letters[i][j].style.backgroundColor = "rgb(173, 173, 2)";
+            correctLetters++;
+        }
+        if (j == 5){
+            i++
+        }
+    }
+    for (let counter = 0; counter < row3.length; j++){
+        if (!isItIRight){
+            letters[i][j].style.backgroundColor = "rgb(82, 81, 81)";
+            keys[i][j].style.backgroundColor = "rgb(82, 81, 81)";
+        }
+        else if (isItIRight) {
+            keys[i][j].style.backgroundColor = "green";
+            letters[i][j].style.backgroundColor = "rgb(82, 81, 81);";
+        }
+        else{ 
+            keys[i][j].style.backgroundColor = "rgb(173, 173, 2)";
+            letters[i][j].style.backgroundColor = "rgb(173, 173, 2)";
+            correctLetters++;
+        }
+        if (j == 5){
+            i++
+        }
+    }
+    for (let counter = 0; counter < row4.length; j++){
+        if (!isItIRight){
+            letters[i][j].style.backgroundColor = "rgb(82, 81, 81)";
+            keys[i][j].style.backgroundColor = "rgb(82, 81, 81)";
+        }
+        else if (isItIRight) {
+            keys[i][j].style.backgroundColor = "green";
+            letters[i][j].style.backgroundColor = "rgb(82, 81, 81);";
+        }
+        else{ 
+            keys[i][j].style.backgroundColor = "rgb(173, 173, 2)";
+            letters[i][j].style.backgroundColor = "rgb(173, 173, 2)";
+            correctLetters++;
+        }
+        if (j == 5){
+            i++
+        }
+    }
+    for (let counter = 0; counter < row5.length; j++){
+        if (!isItIRight){
+            letters[i][j].style.backgroundColor = "rgb(82, 81, 81)";
+            keys[i][j].style.backgroundColor = "rgb(82, 81, 81)";
+        }
+        else if (isItIRight) {
+            keys[i][j].style.backgroundColor = "green";
+            letters[i][j].style.backgroundColor = "rgb(82, 81, 81);";
+        }
+        else{ 
+            keys[i][j].style.backgroundColor = "rgb(173, 173, 2)";
+            letters[i][j].style.backgroundColor = "rgb(173, 173, 2)";
+            correctLetters++;
+        }
+        if (j == 5){
+            i++
+        }
+    }
+    for (let counter = 0; counter < row6.length; j++){
+        if (!isItIRight){
+            letters[i][j].style.backgroundColor = "rgb(82, 81, 81)";
+            keys[i][j].style.backgroundColor = "rgb(82, 81, 81)";
+        }
+        else if (isItIRight) {
+            keys[i][j].style.backgroundColor = "green";
+            letters[i][j].style.backgroundColor = "rgb(82, 81, 81);";
+        }
+        else{ 
+            keys[i][j].style.backgroundColor = "rgb(173, 173, 2)";
+            letters[i][j].style.backgroundColor = "rgb(173, 173, 2)";
+            correctLetters++;
+        }
+        if (j == 5){
+            i++
+        }
+    }
+
+    //win con
+
+
+    if (correctLetters === gameWord.length){
+        alert("YOU WONNNN")
+    }
+
+    //lose con
+
+    let attemptTracker = 6;
+        if (attemptTracker == 0){
+        alert(`unfortunately you lost the word was ${gameWord}`)
+    }
+
 }
-//win con 
 
 
-if (correctLetters === gameWord.length){
-    alert("YOU WONNNN")
-}
 
-//lose con
-
-let attemptTracker = 6;
-if (attemptTracker == 0){
-    alert(`unfortunately you lost the word was ${gameWord}`)
-}
 
 //restart game button
 
