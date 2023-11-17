@@ -10,9 +10,14 @@ function startScreen(evt){
     startScr.remove()
 }
 
-function startGame(){
-    
-}
+let userGuess = [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+]
 
 let words = [
     "which",
@@ -446,7 +451,7 @@ let words = [
 //getting the random word
 
 function getRandomindex(min, max){
-    return Math.random() * (427 - 0) + 0;
+    return Math.floor(Math.random() * (427 - 0) + 0);
 }
 
 
@@ -456,56 +461,75 @@ console.log(words[gameWord])
 
 //making the keyboard fucntional
 
-const keys = Array.from(document.querySelectorAll(".key"));
-const row1 = document.querySelector("#row1");
-const row2 = document.querySelector("#row2");
-const row3 = document.querySelector("#row3");
-const row4 = document.querySelector("#row4");
-const row5 = document.querySelector("#row5"); 
-const row6 = document.querySelector("#row6");
-let userLetters = document.querySelector(".letter")
-    
+
+const keys = Array.from(document.querySelectorAll(".realKey"));
+const letters = Array.from(document.querySelectorAll('.letter'));
+const enterKey = document.querySelector("#Enter");
+const deleteKey = document.querySelector("#Delete");
+
+enterKey.addEventListener("click", checkLetters);
+
 keys.forEach(function(key) {
-    key.addEventListener("click", handleClick);
+    key.addEventListener("click", function(evt) {
+        handleClick(evt);
+    });
 });
 
+let userLetterTracker = 0;
+let userGuessTracker = 0;
 function handleClick(evt){
+    if (userLetterTracker <= 4) { 
+        let i = keys.indexOf(evt.target);
+        let keyId = keys[i].id;    
+        userGuess[userGuessTracker][userLetterTracker]= keyId;
+        letters[userGuessTracker * 5 + userLetterTracker].textContent = keyId;
+        console.log(userGuess)
+        userLetterTracker++
+    }  
     
-
-    // for (userLetters in row1){
-    //     document.row1.userLetters.innerText("test");
-    // }
-
-
-
-
 }
 
 //checking to see what letters are right/wrong in the users inputs
 
-let userGuess = ""
-let GuessletterArray = []
-function checkLetters(){
-    for (let i = 0; i <= gameWord.length; i++){
-        for (let j = 0; i <= userGuess.length; i++){
+let correctLetters = 0;
 
+function checkLetters(){
+    let userRow = userGuess[userGuessTracker].join("").toUpperCase();
+
+    for (let i = 0; i < userRow; i++){
+        let userLetter = userRow.charAt(i);
+        let wordLetter = gameWord.charAt(i);
+        let isInWord = words[gameWord].includes(userLetter);
+
+        if(userLetter === wordLetter){
+            keys[i].style.backgroundColor = "green";
+            letters[i].style.backgroundColor = "green";
+            correctLetters++;
+        }
+        else if(isInWord){
+            keys[i].style.backgroundColor = "rgb(173, 173, 2)";
+            letters[i].style.backgroundColor = "rgb(173, 173, 2)";
+        }
+        else{
+            keys[i].style.backgroundColor = "rgb(82, 81, 81);";
+            letters[i].style.backgroundColor = "rgb(82, 81, 81);";
         }
     }
 }
-
-
 //win con 
 
-function checkUserWord(){
-    if (userGuess === gameWord){
-        console.log("YOU WONNNN")
-    }
-    else if (userGuess != gameWord){
-        
-    }
+
+if (correctLetters === gameWord.length){
+    alert("YOU WONNNN")
 }
 
 //lose con
 
+let attemptTracker = 6;
+if (attemptTracker == 0){
+    alert(`unfortunately you lost the word was ${gameWord}`)
+}
+
 //restart game button
 
+//le game
