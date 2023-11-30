@@ -242,3 +242,14 @@ div.keyboard#zxcv-row{
     background-color: green;
 }
 
+#Restart-Game{
+    width: 120px;
+    height: 55px;
+    border-radius: 20px;
+    background-color: rgb(175, 124, 13);
+    color: white;
+    font-size: 17px;
+    margin-top: 10%;
+    margin-left: 75%;
+
+}
