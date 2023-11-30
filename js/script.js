@@ -673,4 +673,11 @@ function checkLetters(userGuess){
 
 //restart game button
 
+let restartbtn = document.querySelector("#Restart-Game");
+restartbtn.addEventListener("onClick", refresh());
+
+function refresh(){
+    // window.location.reload()
+}
+
 //le game
