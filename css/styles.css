@@ -11,6 +11,8 @@ header{
     height: 150px;
     width: 100%;
     margin-top: -8px;
+    display: flex;
+    flex-direction: row;
 }
 
 #main-title{
@@ -21,7 +23,8 @@ header{
     z-index: 2;
     margin-top: -8px;
     display: inline;
-    margin-left: 39%;
+    margin-left: auto;
+    padding-left: 5%;
 }
 
 
