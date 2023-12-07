@@ -536,123 +536,13 @@ function checkLetters(userGuess){
         else{
             rows[userGuessTracker][j].style.backgroundColor = "rgb(82, 81, 81)";
         }
-        // let isItIRight = gameWord.includes(userGuess[j]);
-        // let isItIRight = gameWord.includes(userGuess[j]);
-        // console.log(isItIRight)
-        // if (!isItIRight){
-        //    row1[j].style.backgroundColor = "rgb(82, 81, 81)";
-        //     // keys[i][j].style.backgroundColor = "rgb(82, 81, 81)";
-        // }
-        // else if (isItIRight && letterInThatSpot) {
-        //     // keys[i][j].style.backgroundColor = "green";
-        //    row1[j].style.backgroundColor = "green;";
-        //     correctLetters++;
-        // }
-        // else{  // keys[i][j].style.backgroundColor = "rgb(173, 173, 2)";
-           
-        //    row1[j].style.backgroundColor = "rgb(173, 173, 2)";   
-        // }
-        // if (j == 5){
-        //     i++
-        // }
-    // }
-    // for (let counter = 0; counter < row2.length; j++){
-    //     if (!isItIRight){
-    //         letters[i][j].style.backgroundColor = "rgb(82, 81, 81)";
-    //         keys[i][j].style.backgroundColor = "rgb(82, 81, 81)";
-    //     }
-    //     else if (isItIRight) {
-    //         keys[i][j].style.backgroundColor = "green";
-    //         letters[i][j].style.backgroundColor = "rgb(82, 81, 81);";
-    //     }
-    //     else{ 
-    //         keys[i][j].style.backgroundColor = "rgb(173, 173, 2)";
-    //         letters[i][j].style.backgroundColor = "rgb(173, 173, 2)";
-    //         correctLetters++;
-    //     }
-    //     if (j == 5){
-    //         i++
-    //     }
-    // }
-    // for (let counter = 0; counter < row3.length; j++){
-    //     if (!isItIRight){
-    //         letters[i][j].style.backgroundColor = "rgb(82, 81, 81)";
-    //         keys[i][j].style.backgroundColor = "rgb(82, 81, 81)";
-    //     }
-    //     else if (isItIRight) {
-    //         keys[i][j].style.backgroundColor = "green";
-    //         letters[i][j].style.backgroundColor = "rgb(82, 81, 81);";
-    //     }
-    //     else{ 
-    //         keys[i][j].style.backgroundColor = "rgb(173, 173, 2)";
-    //         letters[i][j].style.backgroundColor = "rgb(173, 173, 2)";
-    //         correctLetters++;
-    //     }
-    //     if (j == 5){
-    //         i++
-    //     }
-    // }
-    // for (let counter = 0; counter < row4.length; j++){
-    //     if (!isItIRight){
-    //         letters[i][j].style.backgroundColor = "rgb(82, 81, 81)";
-    //         keys[i][j].style.backgroundColor = "rgb(82, 81, 81)";
-    //     }
-    //     else if (isItIRight) {
-    //         keys[i][j].style.backgroundColor = "green";
-    //         letters[i][j].style.backgroundColor = "rgb(82, 81, 81);";
-    //     }
-    //     else{ 
-    //         keys[i][j].style.backgroundColor = "rgb(173, 173, 2)";
-    //         letters[i][j].style.backgroundColor = "rgb(173, 173, 2)";
-    //         correctLetters++;
-    //     }
-    //     if (j == 5){
-    //         i++
-    //     }
-    // }
-    // for (let counter = 0; counter < row5.length; j++){
-    //     if (!isItIRight){
-    //         letters[i][j].style.backgroundColor = "rgb(82, 81, 81)";
-    //         keys[i][j].style.backgroundColor = "rgb(82, 81, 81)";
-    //     }
-    //     else if (isItIRight) {
-    //         keys[i][j].style.backgroundColor = "green";
-    //         letters[i][j].style.backgroundColor = "rgb(82, 81, 81);";
-    //     }
-    //     else{ 
-    //         keys[i][j].style.backgroundColor = "rgb(173, 173, 2)";
-    //         letters[i][j].style.backgroundColor = "rgb(173, 173, 2)";
-    //         correctLetters++;
-    //     }
-    //     if (j == 5){
-    //         i++
-    //     }
-    // }
-    // for (let counter = 0; counter < row6.length; j++){
-    //     if (!isItIRight){
-    //         letters[i][j].style.backgroundColor = "rgb(82, 81, 81)";
-    //         keys[i][j].style.backgroundColor = "rgb(82, 81, 81)";
-    //     }
-    //     else if (isItIRight) {
-    //         keys[i][j].style.backgroundColor = "green";
-    //         letters[i][j].style.backgroundColor = "rgb(82, 81, 81);";
-    //     }
-    //     else{ 
-    //         keys[i][j].style.backgroundColor = "rgb(173, 173, 2)";
-    //         letters[i][j].style.backgroundColor = "rgb(173, 173, 2)";
-    //         correctLetters++;
-    //     }
-    //     if (j == 5){
-    //         i++
-    //     }
     }
-
     //win con
 
 
-    // if (correctLetters === gameWord.length){
-    //     alert("YOU WONNNN")
-    // }
+    if (correctLetters === gameWord.length){
+        alert("YOU WONNNN")
+    }
 
     //lose con
 
@@ -669,15 +559,5 @@ function checkLetters(userGuess){
 }
 
 
-
-
-//restart game button
-
-let restartbtn = document.querySelector("#Restart-Game");
-restartbtn.addEventListener("onClick", refresh());
-
-function refresh(){
-    // window.location.reload()
-}
 
 //le game
