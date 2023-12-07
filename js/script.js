@@ -522,7 +522,6 @@ function checkLetters(userGuess){
     let row4 = document.querySelector("#row4").children;
     let row5 = document.querySelector("#row5").children;
     let row6 = document.querySelector("#row6").children;
-    console.log(row1)
     let rows = [row1, row2, row3, row4, row5, row6]
     for (let j = 0; j < rows[userGuessTracker].length; j++){
         let letterInThatSpot = gameWord.charAt(j);
@@ -532,6 +531,9 @@ function checkLetters(userGuess){
         if (letter == letterInThatSpot){
             rows[userGuessTracker][j].style.backgroundColor = "green";
             // correctLetters++;
+        }
+        else if(gameWord.includes(letter) && rows[userGuessTracker]!= letterInThatSpot){
+            rows[userGuessTracker][j].style.backgroundColor = "rgb(173, 173, 2)";
         }
         else{
             rows[userGuessTracker][j].style.backgroundColor = "rgb(82, 81, 81)";
