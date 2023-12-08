@@ -30,7 +30,7 @@ let words = [
     "words",
     'could',
     'write',
-    'first',
+    'first', 
     'water',
     'after',
     'where',
@@ -481,13 +481,18 @@ keys.forEach(function(key) {
 deleteKey.addEventListener("click", deleteLetter);
 
 function deleteLetter(){
-    if (userLetterTracker > 0) {
-        userLetterTracker--;
+    if (childrenCounter >= 0 && childrenCounter <= 5){
+        letters[childrenCounter].textContent=" ";
+        childrenCounter--;
         userGuess[userGuessTracker][userLetterTracker] = "";
-        letters[userGuessTracker * 5 + userGuessTracker].textContent = "";
+    }
+    if (userLetterTracker >= 0) {
+        rows[userGuessTracker][userLetterTracker] = "";
+        letters[userGuessTracker][userGuessTracker].textContent = "";
+        userLetterTracker--;
         console.log(userGuess)
     }
-    else if (userLetterTracker > 0) {
+    else if (userLetterTracker = 0) {
         handleDelete();
     }
 }
@@ -501,7 +506,7 @@ function handleClick(evt){
         userGuess[userGuessTracker][userLetterTracker]= keyId;
         letters[userGuessTracker * 5 + userLetterTracker].textContent = keyId;
         console.log(userGuess)
-        userLetterTracker++
+        userLetterTracker++ 
     }  
     
 }
@@ -522,7 +527,7 @@ function checkLetters(userGuess){
     let row4 = document.querySelector("#row4").children;
     let row5 = document.querySelector("#row5").children;
     let row6 = document.querySelector("#row6").children;
-    let rows = [row1, row2, row3, row4, row5, row6]
+    let rows = [row1, row2, row3, row4, row5, row6];
     for (let j = 0; j < rows[userGuessTracker].length; j++){
         let letterInThatSpot = gameWord.charAt(j);
         // console.log(letterInThatSpot)
@@ -530,7 +535,7 @@ function checkLetters(userGuess){
         console.log(letter)
         if (letter == letterInThatSpot){
             rows[userGuessTracker][j].style.backgroundColor = "green";
-            // correctLetters++;
+            correctLetters++;
         }
         else if(gameWord.includes(letter) && rows[userGuessTracker]!= letterInThatSpot){
             rows[userGuessTracker][j].style.backgroundColor = "rgb(173, 173, 2)";
@@ -559,6 +564,7 @@ function checkLetters(userGuess){
 
 
 }
+
 
 
 
