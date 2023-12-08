@@ -487,7 +487,7 @@ function deleteLetter(){
         letters[userGuessTracker * 5 + userGuessTracker].textContent = "";
         console.log(userGuess)
     }
-    else if(userLetterTracker>0){
+    else if (userLetterTracker > 0) {
         handleDelete();
     }
 }
