@@ -19,6 +19,18 @@ let userGuess = [
     [],
 ]
 
+let attemptTracker = 6;
+let deleteCounter = -1;
+
+
+let row1 = document.querySelector("#row1").children;
+let row2 = document.querySelector("#row2").children;
+let row3 = document.querySelector("#row3").children;
+let row4 = document.querySelector("#row4").children;
+let row5 = document.querySelector("#row5").children;
+let row6 = document.querySelector("#row6").children;
+let rows = [row1, row2, row3, row4, row5, row6];
+
 let words = [
     "which",
     "there",
@@ -481,20 +493,24 @@ keys.forEach(function(key) {
 deleteKey.addEventListener("click", deleteLetter);
 
 function deleteLetter(){
-    if (childrenCounter >= 0 && childrenCounter <= 5){
-        letters[childrenCounter].textContent=" ";
-        childrenCounter--;
-        userGuess[userGuessTracker][userLetterTracker] = "";
-    }
-    if (userLetterTracker >= 0) {
-        rows[userGuessTracker][userLetterTracker] = "";
-        letters[userGuessTracker][userGuessTracker].textContent = "";
+    if (userLetterTracker > 0 && userLetterTracker <= 4){
+        rows[userGuessTracker][deleteCounter].textContent="";
+        userGuess[userGuessTracker][deleteCounter] = "";
+        deleteCounter--
         userLetterTracker--;
-        console.log(userGuess)
     }
-    else if (userLetterTracker = 0) {
-        handleDelete();
+    else if (userLetterTracker == 0) {
+        // rows[userGuessTracker][0] = "";
+        letters[userGuessTracker * 5 + userLetterTracker].textContent = "";
+        userGuess[userGuessTracker][deleteCounter] = ""
     }
+    else if (deleteCounter == 4){
+        letters[userGuessTracker * 5 + deleteCounter].textContent = "";
+        userGuess[userGuessTracker][deleteCounter] = "";
+        deleteCounter--
+        userLetterTracker--;
+    }
+    console.log(userGuess)
 }
 
 let userLetterTracker = 0;
@@ -506,7 +522,8 @@ function handleClick(evt){
         userGuess[userGuessTracker][userLetterTracker]= keyId;
         letters[userGuessTracker * 5 + userLetterTracker].textContent = keyId;
         console.log(userGuess)
-        userLetterTracker++ 
+        userLetterTracker++
+        deleteCounter++ 
     }  
     
 }
@@ -543,7 +560,16 @@ function checkLetters(userGuess){
         else{
             rows[userGuessTracker][j].style.backgroundColor = "rgb(82, 81, 81)";
         }
+        deleteCounter = -1;
     }
+
+//lose con
+
+    
+    if (attemptTracker === 0 && correctLetters !== gameWord.length){
+        alert(`unfortunately you lost the word was ${gameWord}`)
+    }
+
     //win con
 
 
@@ -551,21 +577,16 @@ function checkLetters(userGuess){
         alert("YOU WONNNN")
     }
 
-    //lose con
-
-    let attemptTracker = 6;
-        if (attemptTracker == 0){
-        alert(`unfortunately you lost the word was ${gameWord}`)
-    }
+    
     userGuessTracker++
     userLetterTracker = 0;
     // gameWordIndex = [(Math.round(getRandomindex()))]
     // gameWord = words[gameWordIndex];
-
-
+    attemptTracker--
+    console.log(attemptTracker)
 }
 
-
+console.log(rows)
 
 
 //le game
