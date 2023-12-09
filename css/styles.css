@@ -251,8 +251,15 @@ div.keyboard#zxcv-row{
     border-radius: 20px;
     background-color: rgb(175, 124, 13);
     color: white;
-    font-size: 17px;
+    font-size: 16px;
     margin-top: 10%;
     margin-left: 75%;
+}
 
+#Restart-Game:hover{
+    border: 0.5px solid white;
+}
+
+#Restart-Game:active{
+    background-color: rgb(199, 140, 14);
 }

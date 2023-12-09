@@ -561,6 +561,10 @@ function checkLetters(userGuess){
             rows[userGuessTracker][j].style.backgroundColor = "rgb(82, 81, 81)";
         }
         deleteCounter = -1;
+        if (correctLetters != 5){
+            correctLetters = 0; 
+        }
+        
     }
 
 //lose con
@@ -590,3 +594,5 @@ console.log(rows)
 
 
 //le game
+
+// work on lose con and vertical correct letter edge case  and then the rest is styling
