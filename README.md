@@ -19,4 +19,5 @@ Next update:
 
 - Adding something that helps with duplicate letters
 - Reworking the styling of the page to look more appealing
+- Cleaning up and reorganizing code to make it easier to read and follow
 
