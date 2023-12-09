@@ -467,10 +467,7 @@ function getRandomindex(min, max){
 }
 let gameWordIndex = [(Math.round(getRandomindex()))]
 let gameWord = words[gameWordIndex];
-// let words = []
-// for (let i = 0; i < 6; i++){
 
-// }
 
 console.log(gameWord)
 
@@ -500,7 +497,6 @@ function deleteLetter(){
         userLetterTracker--;
     }
     else if (userLetterTracker == 0) {
-        // rows[userGuessTracker][0] = "";
         letters[userGuessTracker * 5 + userLetterTracker].textContent = "";
         userGuess[userGuessTracker][deleteCounter] = ""
     }
@@ -547,12 +543,12 @@ function checkLetters(userGuess){
     let rows = [row1, row2, row3, row4, row5, row6];
     for (let j = 0; j < rows[userGuessTracker].length; j++){
         let letterInThatSpot = gameWord.charAt(j);
-        // console.log(letterInThatSpot)
         let letter = rows[userGuessTracker][j].innerText.toLowerCase()
         console.log(letter)
         if (letter == letterInThatSpot){
             rows[userGuessTracker][j].style.backgroundColor = "green";
             correctLetters++;
+
         }
         else if(gameWord.includes(letter) && rows[userGuessTracker]!= letterInThatSpot){
             rows[userGuessTracker][j].style.backgroundColor = "rgb(173, 173, 2)";
@@ -580,8 +576,6 @@ function checkLetters(userGuess){
     
     userGuessTracker++
     userLetterTracker = 0;
-    // gameWordIndex = [(Math.round(getRandomindex()))]
-    // gameWord = words[gameWordIndex];
     attemptTracker--
 
 
@@ -595,10 +589,11 @@ function checkLetters(userGuess){
 
     console.log(attemptTracker)
     console.log(correctLetters)
+    
 }
+console.log(keys)
 
 
 
 //le game
 
-// work on lose con and vertical correct letter edge case  and then the rest is styling
