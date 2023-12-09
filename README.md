@@ -15,3 +15,8 @@ You can find the game here:
 
 https://jaylenberrien.github.io/wordle-project/
 
+Next update: 
+
+- Adding something that helps with duplicate letters
+- Reworking the styling of the page to look more appealing
+

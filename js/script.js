@@ -599,7 +599,7 @@ function checkLetters(userGuess){
     }
 
     if (attemptTracker === 0 && correctLetters == 0){
-        alert(`unfortunately you lost, the word was ${gameWord}`)
+        alert(`Unfortunately you lost! The word was ${gameWord}`)
     }
 
     console.log(attemptTracker)
