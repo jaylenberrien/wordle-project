@@ -548,19 +548,34 @@ function checkLetters(userGuess){
         if (letter == letterInThatSpot){
             rows[userGuessTracker][j].style.backgroundColor = "green";
             correctLetters++;
+            keys.forEach((key)=>{
+                if(letter == key.textContent.toLowerCase()){
+                    key.style.backgroundColor = "green"
+                }
+            })
 
         }
         else if(gameWord.includes(letter) && rows[userGuessTracker]!= letterInThatSpot){
             rows[userGuessTracker][j].style.backgroundColor = "rgb(173, 173, 2)";
+            keys.forEach((key)=>{
+                if(letter == key.textContent.toLowerCase()){
+                    key.style.backgroundColor = "rgb(173, 173, 2)"
+                }
+            })
         }
         else{
             rows[userGuessTracker][j].style.backgroundColor = "rgb(82, 81, 81)";
+            keys.forEach((key)=>{
+                if(letter == key.textContent.toLowerCase()){
+                    key.style.backgroundColor = "rgb(82, 81, 81)"
+                }
+            })
         }
         deleteCounter = -1;
        
         
     }
-
+    
     //lose con
 
     
