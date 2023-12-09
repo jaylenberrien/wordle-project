@@ -561,18 +561,14 @@ function checkLetters(userGuess){
             rows[userGuessTracker][j].style.backgroundColor = "rgb(82, 81, 81)";
         }
         deleteCounter = -1;
-        if (correctLetters != 5){
-            correctLetters = 0; 
-        }
+       
         
     }
 
-//lose con
+    //lose con
 
     
-    if (attemptTracker === 0 && correctLetters !== gameWord.length){
-        alert(`unfortunately you lost the word was ${gameWord}`)
-    }
+   
 
     //win con
 
@@ -587,10 +583,20 @@ function checkLetters(userGuess){
     // gameWordIndex = [(Math.round(getRandomindex()))]
     // gameWord = words[gameWordIndex];
     attemptTracker--
+
+
+    if (correctLetters != 5){
+        correctLetters = 0; 
+    }
+
+    if (attemptTracker === 0 && correctLetters == 0){
+        alert(`unfortunately you lost, the word was ${gameWord}`)
+    }
+
     console.log(attemptTracker)
+    console.log(correctLetters)
 }
 
-console.log(rows)
 
 
 //le game
