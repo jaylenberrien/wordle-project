@@ -531,7 +531,7 @@ let correctLetters = 0;
 
 function checkLetters(userGuess){
     
-    console.log(gameWord)
+    // console.log(gameWord)
     
 
     let row1 = document.querySelector("#row1").children;
@@ -606,7 +606,7 @@ function checkLetters(userGuess){
     console.log(correctLetters)
     
 }
-console.log(keys)
+
 
 
 
