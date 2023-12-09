@@ -15,8 +15,9 @@ You can find the game here:
 
 https://jaylenberrien.github.io/wordle-project/
 
-Next update: 
+Next updates: 
 
 - Reworking the styling of the page to look more appealing
+- Making styling changes so the site is more mobile-friendly
 - Cleaning up and reorganizing code to make it easier to read and follow
 
