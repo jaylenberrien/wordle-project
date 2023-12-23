@@ -3,10 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=DM+Serif+Display&family=Secular+One&display=swap');
 
 header{
-    background-color: black;
-    margin-top: 0;
-    border-bottom: 2px solid black;
+    background-color: rgb(24, 24, 24);
+    margin-top: -8px;
+    border-bottom: 2px solid rgb(0, 0, 0);
     margin-bottom: 160px;
+    padding-top: 11px;
     
 }
 
@@ -29,9 +30,8 @@ header{
     font-size: 60px;
     z-index: 2;
     margin-top: -8px;
-    display: inline;
     margin-left: auto;
-    padding-left: 5%;
+    padding-left: 4%;
     color: white;
     font-family: 'DM Serif Display', serif;
     text-shadow: -3px 3px gray;
@@ -59,12 +59,7 @@ header{
 }
 
 #start-popup{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
+    margin-top: 45%;
     align-items: center;
     justify-content: center;
     background-color: grey;
@@ -73,11 +68,12 @@ header{
 }
 
 #line{
-    border: 1px dashed black
+    border: 1px dashed rgb(24, 24, 24)
 }
 
 #startup-content{
     margin-top: 10px;
+    padding-left: 15px;
 }
 
 ul{
@@ -92,15 +88,6 @@ ul{
     margin: 10px;
 }
 
-#start{
-    height: 60px;
-    width: 150px;
-    font-size: 22px;
-    color: white;
-    background-color: green;
-    margin-top: 50px;
-    
-}
 
 @keyframes breathe {
     0%{
@@ -144,6 +131,9 @@ body{
     margin-right: 0;
     height: 100vh;
     min-width: 700px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'DM Serif Display', serif;
 }
 
 div#game-container{
@@ -155,9 +145,8 @@ div#game-container{
     margin-left: auto;
     margin-right: auto;
     margin-top: -9%;
-    margin-bottom: 50px;
-    padding-top: 30px;
-    
+    margin-bottom: 60px;
+    padding-top: 30px;    
 }
 
 .row{
@@ -174,10 +163,11 @@ div#game-container{
     text-align: center;
     align-items: center;
     justify-content: center;
-    color: black;
+    color: rgb(24, 24, 24);
     font-size: 30px;
     border:1px solid gray;
     border-radius: 10px;
+    margin-bottom: 7px;
     
 }
 
@@ -202,9 +192,8 @@ div#keyboard-container{
     text-align: center;
     align-items: center;
     justify-content: center;
-    color: black;
+    color: rgb(24, 24, 24);
     font-size: 26px;
-    border:1px solid gray;
     border-radius: 10px;
 
 }
@@ -217,12 +206,21 @@ div#keyboard-container{
     width: 70px;
 }
 
-.key:active{
-    background-color: rgb(199, 140, 14);
+/* .deleteKey{
+    width: 90px;
 }
 
+#Enter{
+    width: 70px;
+} */
+
+
 .key:hover{
-    border: 0.5px solid white;
+    background-color:  rgb(206, 206, 206);
+}
+
+.key:active{
+    background-color: rgb(160, 160, 160);
 }
 
 div.keyboard#qwer-row{
@@ -243,9 +241,6 @@ div.keyboard#zxcv-row{
     justify-content: center;
 }
 
-/* html{
-    cursor: url("pngimg.com - bee_PNG74646.png"), auto;
-} */
 
 /* styling for letters */
 
@@ -266,18 +261,20 @@ div.keyboard#zxcv-row{
     height: 55px;
     border-radius: 10px;
     background-color: rgb(187, 187, 187);
-    color: black;
+    color: rgb(24, 24, 24);
     font-size: 16px;
     margin-top: 1%;
     margin-left: 75%;
+    border-style: none;
+    font-family: 'DM Serif Display', serif;
 }
 
 #Restart-Game:hover{
-    border: 0.5px solid white;
+    background-color:  rgb(206, 206, 206);
 }
 
 #Restart-Game:active{
-    background-color: rgb(199, 140, 14);
+    background-color:  rgb(160, 160, 160);
 }
 
 #hint2{
@@ -285,18 +282,20 @@ div.keyboard#zxcv-row{
     height: 55px;
     border-radius: 10px;
     background-color: rgb(187, 187, 187);
-    color: black;
+    color: rgb(24, 24, 24);
     font-size: 16px;
     margin-top: 1% ;
     margin-left: 75%;
+    border-style: none;
+    font-family: 'DM Serif Display', serif;
 }
 
 #hint2:hover{
-    border: 0.5px solid white;
+    background-color:  rgb(206, 206, 206);
 }
 
 #hint2:active{
-    background-color: rgb(199, 140, 14);
+    background-color:  rgb(160, 160, 160);
 }
 
 #hint-response{
@@ -307,5 +306,23 @@ div.keyboard#zxcv-row{
     margin-left: 75%;
     color: white;
     font-size: 16px;
-
 }
+
+footer{
+    margin-top: auto;
+    margin-bottom: -8px;
+    height: 3.5%;
+    color: white;
+    font-family: 'DM Serif Display', serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    
+}
+
+#footer-div{
+    text-align: center;    
+}
+

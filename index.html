@@ -12,45 +12,7 @@
     </div>
 </header>
 <body>
-    <div id="start-popup">
-        <div id="startup-content">
-        <h1 id="Welcome">Welcome</h1>
-        <div id="line"></div>
-        <p id ="startup-text">
-            <ul>
-                <h3>How to play:</h3>
-                <li id="hint">The color of the tiles will change after you submit your word</li>
-                <h3>Examples:</h3>
-                <li>A yellow tile indicates that you picked the right letter but it’s in the wrong spot</li>
-                <div class="row" id="example">
-                    <div class="key fakeKey" id="example-letter1">W</div>
-                    <div class="key fakeKey">O</div>
-                    <div class="key fakeKey">R</div>
-                    <div class="key fakeKey">L</div>
-                    <div class="key fakeKey">D</div>
-                </div>
-                <li>The green tile indicates that you picked the right letter in the correct spot</li>
-                <div class="row" id="example">
-                    <div class="key fakeKey">C</div>
-                    <div class="key fakeKey">H</div>
-                    <div class="key fakeKey" id="example-letter2">I</div>
-                    <div class="key fakeKey">L</div>
-                    <div class="key fakeKey">D</div>
-                </div>
-                <li>The gray tile indicates that the letter you picked is not included in the word at all.</li>
-                <div class="row" id="example">
-                    <div class="key fakeKey">T</div>
-                    <div class="key fakeKey">H</div>
-                    <div class="key fakeKey">E</div>
-                    <div class="key fakeKey">R</div>
-                    <div class="key fakeKey" id="example-letter3">E</div>
-                </div>
-                <li>You have six tries, and it is a five letter word that you have to guess </li>
-            </ul>
-        </p>
-            
-        <button id="start" type="button" value="Start Game">Start Game</button>
-    </div>
+    
     </div>
     <div id="game-container">
         <div class="row" id="row1">
@@ -148,7 +110,44 @@
 
 
 
-    
+    <div id="start-popup">
+        <div id="startup-content">
+        <h1 id="Welcome">Instructions</h1>
+        <div id="line"></div> 
+        <p id ="startup-text">
+            <ul>
+                <h3>How to play:</h3>
+                <li id="hint">The color of the tiles will change after you submit your word</li>
+                <h3>Examples:</h3>
+                <li>A yellow tile indicates that you picked the right letter but it’s in the wrong spot</li>
+                <div class="row" id="example">
+                    <div class="key fakeKey" id="example-letter1">W</div>
+                    <div class="key fakeKey">O</div>
+                    <div class="key fakeKey">R</div>
+                    <div class="key fakeKey">L</div>
+                    <div class="key fakeKey">D</div>
+                </div>
+                <li>The green tile indicates that you picked the right letter in the correct spot</li>
+                <div class="row" id="example">
+                    <div class="key fakeKey">C</div>
+                    <div class="key fakeKey">H</div>
+                    <div class="key fakeKey" id="example-letter2">I</div>
+                    <div class="key fakeKey">L</div>
+                    <div class="key fakeKey">D</div>
+                </div>
+                <li>The gray tile indicates that the letter you picked is not included in the word at all.</li>
+                <div class="row" id="example">
+                    <div class="key fakeKey">T</div>
+                    <div class="key fakeKey">H</div>
+                    <div class="key fakeKey">E</div>
+                    <div class="key fakeKey">R</div>
+                    <div class="key fakeKey" id="example-letter3">E</div>
+                </div>
+                <li>You have six tries, and it is a five letter word that you have to guess </li>
+            </ul>
+        </p>
+            
+    </div>
 
     <script src="js/script.js"></script>
 </body>

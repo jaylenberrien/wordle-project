@@ -4,7 +4,7 @@ const startbtn = document.getElementById("start");
 
 startbtn.addEventListener("click", startScreen);
 
-const startScr = document.getElementById("start-popup")
+const startScr = document.getElementById("start-popup");
 
 function startScreen(evt){
     startScr.remove()
