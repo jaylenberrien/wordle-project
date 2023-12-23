@@ -606,7 +606,31 @@ function checkLetters(userGuess){
     console.log(correctLetters)
     
 }
+ 
+let hint2 = document.querySelector("#hint2");
+hint2.addEventListener("click", giveHint)
+let hintRes = document.querySelector("#hint-response")
 
+function giveHint(){
+    let dupl = "is";
+    let noDupl = "isn't";
+    for(let i = 0; i <= gameWord.length; i++){
+        let currentLetter = gameWord[i]
+        for(let j = 0; j <= gameWord.length; j++){
+            if (currentLetter == gameWord[i]){
+                let actHint = document.createElement("p");
+                actHint.textContent= `There ${dupl} a duplicate letter`;
+                actHint.appendChild(hintRes);
+            }
+            else{
+                let actHint = document.createElement("p");
+                actHint.textContent= `There ${noDupl} a duplicate letter`;
+                actHint.appendChild(hintRes);
+            }
+        }
+    }
+
+}
 
 
 

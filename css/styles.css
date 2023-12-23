@@ -1,8 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=DM+Serif+Display&family=Secular+One&display=swap');
+
 header{
-    background-color: rgb(175, 124, 13);
+    background-color: black;
     margin-top: 0;
     border-bottom: 2px solid black;
     margin-bottom: 160px;
+    
 }
 
 #title-div{
@@ -11,8 +16,10 @@ header{
     height: 150px;
     width: 100%;
     margin-top: -8px;
+    margin-right: -4px;
     display: flex;
     flex-direction: row;
+   
 }
 
 #main-title{
@@ -25,6 +32,9 @@ header{
     display: inline;
     margin-left: auto;
     padding-left: 5%;
+    color: white;
+    font-family: 'DM Serif Display', serif;
+    text-shadow: -3px 3px gray;
 }
 
 
@@ -45,7 +55,7 @@ header{
 }
 
 .key,.letter{
-    border-radius: 10px;
+    font-family: 'Secular One', sans-serif;
 }
 
 #start-popup{
@@ -128,8 +138,8 @@ li{
 
 
 body{
-    background-color: rgb(209, 172, 7);
-    font-family: cursive;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Times New Roman', Times, serif;
     margin-left: 0;
     margin-right: 0;
     height: 100vh;
@@ -157,7 +167,6 @@ div#game-container{
 }
 
 .letter{
-    background-color: rgb(175, 124, 13);
     height: 50px;
     width: 50px;
     display: flex;
@@ -165,9 +174,10 @@ div#game-container{
     text-align: center;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: black;
     font-size: 30px;
-    border:1px solid rgb(32, 30, 30)
+    border:1px solid gray;
+    border-radius: 10px;
     
 }
 
@@ -183,19 +193,24 @@ div#keyboard-container{
 }
 
 .key{
-    background-color: rgb(175, 124, 13);
+    background-color: rgb(187, 187, 187);
     height: 50px;
     width: 50px;
-    margin: 2px;
+    margin: 3px;
     display: flex;
     flex-direction: row;
     text-align: center;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 17px;
-    border:1px solid rgb(32, 30, 30)
+    color: black;
+    font-size: 26px;
+    border:1px solid gray;
+    border-radius: 10px;
 
+}
+
+.deleteKey{
+    width: 90px;
 }
 
 #Enter{
@@ -249,11 +264,11 @@ div.keyboard#zxcv-row{
 #Restart-Game{
     width: 120px;
     height: 55px;
-    border-radius: 20px;
-    background-color: rgb(175, 124, 13);
-    color: white;
+    border-radius: 10px;
+    background-color: rgb(187, 187, 187);
+    color: black;
     font-size: 16px;
-    margin-top: 10%;
+    margin-top: 1%;
     margin-left: 75%;
 }
 
@@ -263,4 +278,34 @@ div.keyboard#zxcv-row{
 
 #Restart-Game:active{
     background-color: rgb(199, 140, 14);
+}
+
+#hint2{
+    width: 120px;
+    height: 55px;
+    border-radius: 10px;
+    background-color: rgb(187, 187, 187);
+    color: black;
+    font-size: 16px;
+    margin-top: 1% ;
+    margin-left: 75%;
+}
+
+#hint2:hover{
+    border: 0.5px solid white;
+}
+
+#hint2:active{
+    background-color: rgb(199, 140, 14);
+}
+
+#hint-response{
+    background-color: blue;
+    width: 120px;
+    height: 55px;
+    margin-top: 1% ;
+    margin-left: 75%;
+    color: white;
+    font-size: 16px;
+
 }
