@@ -2,7 +2,7 @@
 const startbtn = document.getElementById("start");
 
 
-startbtn.addEventListener("click", startScreen);
+
 
 const startScr = document.getElementById("start-popup");
 
@@ -519,73 +519,83 @@ function handleClick(evt){
         letters[userGuessTracker * 5 + userLetterTracker].textContent = keyId;
         console.log(userGuess)
         userLetterTracker++
-        deleteCounter++ 
+        deleteCounter++
+        console.log(userGuess[0].toLowerCase().join(''))
     }  
     
 }
 
-//checking to see what letters are right/wrong in the users inputs
+//checking to see what letters are right/wrong in the users input thats us what is what we are doing right now nothing else
 let i = 0
 let j = 0
 let correctLetters = 0;
 
+
 function checkLetters(userGuess){
     
     // console.log(gameWord)
-    
-
-    let row1 = document.querySelector("#row1").children;
-    let row2 = document.querySelector("#row2").children;
-    let row3 = document.querySelector("#row3").children;
-    let row4 = document.querySelector("#row4").children;
-    let row5 = document.querySelector("#row5").children;
-    let row6 = document.querySelector("#row6").children;
-    let rows = [row1, row2, row3, row4, row5, row6];
-    for (let j = 0; j < rows[userGuessTracker].length; j++){
-        let letterInThatSpot = gameWord.charAt(j);
-        let letter = rows[userGuessTracker][j].innerText.toLowerCase()
-        console.log(letter)
-        if (letter == letterInThatSpot){
-            rows[userGuessTracker][j].style.backgroundColor = "green";
-            correctLetters++;
-            keys.forEach((key)=>{
-                if(letter == key.textContent.toLowerCase()){
-                    key.style.backgroundColor = "green"
-                }
-            })
-
-        }
-        else if(gameWord.includes(letter) && rows[userGuessTracker]!= letterInThatSpot){
-            rows[userGuessTracker][j].style.backgroundColor = "rgb(173, 173, 2)";
-            keys.forEach((key)=>{
-                if(letter == key.textContent.toLowerCase()){
-                    key.style.backgroundColor = "rgb(173, 173, 2)"
-                }
-            })
-        }
-        else{
-            rows[userGuessTracker][j].style.backgroundColor = "rgb(82, 81, 81)";
-            keys.forEach((key)=>{
-                if(letter == key.textContent.toLowerCase()){
-                    key.style.backgroundColor = "rgb(82, 81, 81)"
-                }
-            })
-        }
-        deleteCounter = -1;
-       
-        
-    }
-    
-    //lose con
-
-    
    
+   if (words.includes(userGuess[userGuessTracker].join('')).toLowerCase() == true){
+        let row1 = document.querySelector("#row1").children;
+        let row2 = document.querySelector("#row2").children;
+        let row3 = document.querySelector("#row3").children;
+        let row4 = document.querySelector("#row4").children;
+        let row5 = document.querySelector("#row5").children;
+        let row6 = document.querySelector("#row6").children;
+        let rows = [row1, row2, row3, row4, row5, row6];
+        for (let j = 0; j < rows[userGuessTracker].length; j++){
+            let letterInThatSpot = gameWord.charAt(j);
+            let letter = rows[userGuessTracker][j].innerText.toLowerCase()
+            console.log(letter)
+            if (letter == letterInThatSpot){
+                rows[userGuessTracker][j].style.backgroundColor = "green";
+                correctLetters++;
+                keys.forEach((key)=>{
+                    if(letter == key.textContent.toLowerCase()){
+                        key.style.backgroundColor = "green";
+                        key.style.color = "white";
+                    }
+                })
 
-    //win con
+            }
+            else if(gameWord.includes(letter) && rows[userGuessTracker]!= letterInThatSpot){
+                rows[userGuessTracker][j].style.backgroundColor = "rgb(173, 173, 2)";
+                keys.forEach((key)=>{
+                    if(letter == key.textContent.toLowerCase()){
+                        key.style.backgroundColor = "rgb(173, 173, 2)";
+                        key.style.color = "white";
+                    }
+                })
+            }
+            else{
+                rows[userGuessTracker][j].style.backgroundColor = "rgb(82, 81, 81)";
+                keys.forEach((key)=>{
+                    if(letter == key.textContent.toLowerCase()){
+                        key.style.backgroundColor = "rgb(82, 81, 81)";
+                        key.style.color = "white";
+                    }
+                })
+            }
+            deleteCounter = -1;
+
+        }
+    }
+    else {
+        alert("The word you sumbitted isn't included in our word list, please enter another 5 letter word")
+    }
+        
+    
+    
+    
+
+    //win and lose con
 
 
     if (correctLetters === gameWord.length){
-        alert("YOU WONNNN")
+        let winState = document.createElement("p");
+        let winTarget = document.getElementById("game-result")
+        winState.textContent = `Congratulations!!! You won!!`;
+        winTarget.appendChild(winState)  
     }
 
     
@@ -599,38 +609,117 @@ function checkLetters(userGuess){
     }
 
     if (attemptTracker === 0 && correctLetters == 0){
-        alert(`Unfortunately you lost! The word was ${gameWord}`)
+        let winState = document.createElement("p");
+        let winTarget = document.getElementById("game-result")
+        winState.textContent = `Unfortunately you lost, the word was ${gameWord}.`;
+        winTarget.appendChild(winState)
     }
 
-    console.log(attemptTracker)
-    console.log(correctLetters)
-    
 }
  
 let hint2 = document.querySelector("#hint2");
 hint2.addEventListener("click", giveHint)
 let hintRes = document.querySelector("#hint-response")
 
+
+let hintCounter = 0;
 function giveHint(){
+    
+    let isThereDuplicate = false
+
+    let letter1 = gameWord[0]
+    let letter2 = gameWord[1]
+    let letter3 = gameWord[2]
+    let letter4 = gameWord[3]
+    let letter5 = gameWord[4]
+
     let dupl = "is";
     let noDupl = "isn't";
-    for(let i = 0; i <= gameWord.length; i++){
-        let currentLetter = gameWord[i]
-        for(let j = 0; j <= gameWord.length; j++){
-            if (currentLetter == gameWord[i]){
-                let actHint = document.createElement("p");
-                actHint.textContent= `There ${dupl} a duplicate letter`;
-                actHint.appendChild(hintRes);
-            }
-            else{
-                let actHint = document.createElement("p");
-                actHint.textContent= `There ${noDupl} a duplicate letter`;
-                actHint.appendChild(hintRes);
-            }
-        }
+
+    
+    if (letter1 == gameWord[1]){
+        isThereDuplicate = true
+    }
+    if (letter1 == gameWord[2]){
+        isThereDuplicate = true
+    }
+    if (letter1 == gameWord[3]){
+        isThereDuplicate = true
+    }
+    if (letter1 == gameWord[4]){
+        isThereDuplicate = true
+    }
+    if (letter2 == gameWord[0]){
+        isThereDuplicate = true
+    }
+    if (letter2 == gameWord[2]){
+        isThereDuplicate = true
+    }
+    if (letter2 == gameWord[3]){
+        isThereDuplicate = true
+    }
+    if (letter2 == gameWord[4]){
+        isThereDuplicate = true
+    }
+    if (letter3 == gameWord[0]){
+        isThereDuplicate = true
+    }
+    if (letter3 == gameWord[1]){
+        isThereDuplicate = true
+    }
+    if (letter3 == gameWord[3]){
+        isThereDuplicate = true
+    }
+    if (letter3 == gameWord[4]){
+        isThereDuplicate = true
+    }
+    if (letter4 == gameWord[0]){
+        isThereDuplicate = true
+    }
+    if (letter4 == gameWord[1]){
+        isThereDuplicate = true
+    }
+    if (letter4 == gameWord[2]){
+        isThereDuplicate = true
+    }
+    if (letter4 == gameWord[4]){
+        isThereDuplicate = true
+    }
+    if (letter5 == gameWord[0]){
+        isThereDuplicate = true
+    }
+    if (letter5 == gameWord[1]){
+        isThereDuplicate = true
+    }
+    if (letter5 == gameWord[2]){
+        isThereDuplicate = true
+    }
+    if (letter5 == gameWord[3]){
+        isThereDuplicate = true
     }
 
+    
+    if (hintCounter == 0){
+        if (isThereDuplicate == true){
+            let actHint = document.createElement("p");
+            let hintTarget = document.getElementById("hint-response")
+            actHint.textContent = `There ${dupl} a duplicate letter`;
+            hintTarget.appendChild(actHint)  
+        }
+        else{
+            let actHint = document.createElement("p");
+            let hintTarget = document.getElementById("hint-response")
+            actHint.textContent = `There ${noDupl} a duplicate letter`;
+            hintTarget.appendChild(actHint)
+        }
+        hintCounter++
+    }
+
+    
 }
+    
+
+
 
 
 
