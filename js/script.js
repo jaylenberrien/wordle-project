@@ -515,12 +515,12 @@ function handleClick(evt){
     if (userLetterTracker <= 4) { 
         let i = keys.indexOf(evt.target);
         let keyId = keys[i].id;    
-        userGuess[userGuessTracker][userLetterTracker]= keyId;
+        userGuess[userGuessTracker].push(keyId);
         letters[userGuessTracker * 5 + userLetterTracker].textContent = keyId;
         console.log(userGuess)
         userLetterTracker++
         deleteCounter++
-        console.log(userGuess[0].toLowerCase().join(''))
+        // console.log(userGuess[0].toLowerCase().join(''))
     }  
     
 }
@@ -531,11 +531,9 @@ let j = 0
 let correctLetters = 0;
 
 
-function checkLetters(userGuess){
-    
-    // console.log(gameWord)
-   
-   if (words.includes(userGuess[userGuessTracker].join('')).toLowerCase() == true){
+function checkLetters(evt){
+    let currentGuess = userGuess[userGuessTracker];
+   if (words.includes(currentGuess.join('').toLowerCase())){
         let row1 = document.querySelector("#row1").children;
         let row2 = document.querySelector("#row2").children;
         let row3 = document.querySelector("#row3").children;
@@ -543,6 +541,7 @@ function checkLetters(userGuess){
         let row5 = document.querySelector("#row5").children;
         let row6 = document.querySelector("#row6").children;
         let rows = [row1, row2, row3, row4, row5, row6];
+
         for (let j = 0; j < rows[userGuessTracker].length; j++){
             let letterInThatSpot = gameWord.charAt(j);
             let letter = rows[userGuessTracker][j].innerText.toLowerCase()
@@ -581,8 +580,26 @@ function checkLetters(userGuess){
         }
     }
     else {
-        alert("The word you sumbitted isn't included in our word list, please enter another 5 letter word")
-    }
+        alert("The word you sumbitted isn't included in our word list, please enter another 5 letter word");
+        for (let j = 0; j < rows[userGuessTracker].length; j++) {
+            rows[userGuessTracker][j].textContent = "";
+        }
+        userGuess[userGuessTracker].length = 0
+        if (userGuessTracker == 0){
+            userGuessTracker = userGuessTracker - 1
+        }
+        if (userGuessTracker > 0){
+            userGuessTracker--
+           
+        }
+
+        userLetterTracker = 0;
+        deleteCounter = -1;
+        
+            
+    } 
+        
+    
         
     
     
