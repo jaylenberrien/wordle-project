@@ -18,6 +18,13 @@ https://jaylenberrien.github.io/wordle-project/
 Next updates: 
 
 - Reworking the styling of the page to look more appealing
+- Adding animations
+- Matching the keyboard changes to the game board
 - Making styling changes so the site is more mobile-friendly
 - Cleaning up and reorganizing code to make it easier to read and follow
+
+Known Bugs:
+
+- Lose and win conditions arent functioning correctly
+- You can type after you win
 
