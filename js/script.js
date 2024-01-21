@@ -629,7 +629,7 @@ function checkLetters(evt){
         hintCounter++
     }
 
-    userGuess[userGuessTracker] = [];
+    // userGuess[userGuessTracker] = [];
     userGuessTracker++
     userLetterTracker = 0;
     attemptTracker--
