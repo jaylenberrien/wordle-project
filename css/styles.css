@@ -12,8 +12,9 @@ header{
 }
 
 #title-div{
-    margin: 0;
+    /* margin: 0; */
     margin-right: -5px;
+    /* margin-bottom: 100px; */
     height: 150px;
     width: 100%;
     margin-top: -8px;
@@ -59,11 +60,17 @@ header{
 }
 
 #start-popup{
-    margin-top: 45%;
+    position: absolute;
+    top: 950px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-bottom: -9px;
     align-items: center;
     justify-content: center;
     background-color: grey;
     max-width: 100%;
+    height: 70%;
     padding: 15px;
 }
 
@@ -144,7 +151,7 @@ div#game-container{
     justify-content: space-evenly;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -9%;
+    margin-top: -100px;
     margin-bottom: 60px;
     padding-top: 30px;    
 }
@@ -179,7 +186,7 @@ div#keyboard-container{
     justify-content: space-evenly;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: -440px;
+    margin-bottom: -500px;
 }
 
 .key{
@@ -258,6 +265,11 @@ div.keyboard#zxcv-row{
 
 .guessed-letter {
     color: white;
+}
+
+p{
+    margin-bottom: -10px;
+    padding:0;
 }
 
 #Restart-Game{
