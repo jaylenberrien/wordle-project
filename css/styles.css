@@ -256,6 +256,10 @@ div.keyboard#zxcv-row{
     background-color: green;
 }
 
+.guessed-letter {
+    color: white;
+}
+
 #Restart-Game{
     width: 120px;
     height: 55px;

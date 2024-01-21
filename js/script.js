@@ -494,23 +494,29 @@ keys.forEach(function(key) {
 deleteKey.addEventListener("click", deleteLetter);
 
 function deleteLetter(){
-    if (userLetterTracker > 0 && userLetterTracker <= 4){
-        rows[userGuessTracker][deleteCounter].textContent="";
-        userGuess[userGuessTracker][deleteCounter] = "";
-        deleteCounter--
+    if (userLetterTracker > 0 && userLetterTracker <= 4) {
+        // let deletedLetter = userGuess[userGuessTracker][deleteCounter];
+        rows[userGuessTracker][deleteCounter].textContent = "";
+        userGuess[userGuessTracker].pop(); 
+        deleteCounter--;
         userLetterTracker--;
-    }
-    else if (userLetterTracker == 0) {
-        letters[userGuessTracker * 5 + userLetterTracker].textContent = "";
-        userGuess[userGuessTracker][deleteCounter] = ""
-    }
-    else if (deleteCounter == 4){
-        letters[userGuessTracker * 5 + deleteCounter].textContent = "";
-        userGuess[userGuessTracker][deleteCounter] = "";
-        deleteCounter--
-        userLetterTracker--;
-    }
-    console.log(userGuess)
+
+        if (userLetterTracker === 0) {
+                userGuess[userGuessTracker] = [];
+            }
+        } 
+        else if (userLetterTracker == 0) {
+            letters[userGuessTracker * 5 + userLetterTracker].textContent = "";
+            userGuess[userGuessTracker].pop(); 
+        } 
+        else if (deleteCounter == 4) {
+            letters[userGuessTracker * 5 + deleteCounter].textContent = "";
+            [userGuessTracker].pop(); 
+            deleteCounter--;
+            userLetterTracker--;
+        }
+    console.log(userGuess);
+    
 }
 
 let userLetterTracker = 0;
@@ -526,7 +532,7 @@ function handleClick(evt){
         deleteCounter++
         // console.log(userGuess[0].toLowerCase().join(''))
     }  
-    
+
 }
 
 //checking to see what letters are right/wrong in the users input thats us what is what we are doing right now nothing else
@@ -579,6 +585,8 @@ function checkLetters(evt){
                     }
                 })
             }
+
+            rows[userGuessTracker][j].classList.add("guessed-letter");
             deleteCounter = -1;
 
         }
@@ -618,9 +626,10 @@ function checkLetters(evt){
         winState.textContent = `Congratulations!!! You won!!`;
         winTarget.appendChild(winState)
         isGameOver = true
+        hintCounter++
     }
 
-    
+    userGuess[userGuessTracker] = [];
     userGuessTracker++
     userLetterTracker = 0;
     attemptTracker--
@@ -630,12 +639,13 @@ function checkLetters(evt){
         correctLetters = 0; 
     }
 
-    if (attemptTracker === 0 && correctLetters != 5){
+    if (attemptTracker === 0 && correctLetters !== 5){
         let winState = document.createElement("p");
         let winTarget = document.getElementById("game-result")
         winState.textContent = `Unfortunately you lost, the word was ${gameWord}.`;
         winTarget.appendChild(winState)
         isGameOver = true
+        hintCounter++
     }
 
 }
