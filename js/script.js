@@ -625,7 +625,7 @@ function checkLetters(evt){
         correctLetters = 0; 
     }
 
-    if (attemptTracker === 0 && correctLetters == 0){
+    if (attemptTracker === 0 && correctLetters != 5){
         let winState = document.createElement("p");
         let winTarget = document.getElementById("game-result")
         winState.textContent = `Unfortunately you lost, the word was ${gameWord}.`;
