@@ -460,6 +460,10 @@ let words = [
     "apply",
     "tears"
 ]
+
+//game over checker variable
+let isGameOver = false
+
 //getting the random word
 
 function getRandomindex(min, max){
@@ -512,7 +516,7 @@ function deleteLetter(){
 let userLetterTracker = 0;
 let userGuessTracker = 0;
 function handleClick(evt){
-    if (userLetterTracker <= 4) { 
+    if (userLetterTracker <= 4 && isGameOver == false) { 
         let i = keys.indexOf(evt.target);
         let keyId = keys[i].id;    
         userGuess[userGuessTracker].push(keyId);
@@ -612,7 +616,8 @@ function checkLetters(evt){
         let winState = document.createElement("p");
         let winTarget = document.getElementById("game-result")
         winState.textContent = `Congratulations!!! You won!!`;
-        winTarget.appendChild(winState)  
+        winTarget.appendChild(winState)
+        isGameOver = true
     }
 
     
@@ -630,6 +635,7 @@ function checkLetters(evt){
         let winTarget = document.getElementById("game-result")
         winState.textContent = `Unfortunately you lost, the word was ${gameWord}.`;
         winTarget.appendChild(winState)
+        isGameOver = true
     }
 
 }
