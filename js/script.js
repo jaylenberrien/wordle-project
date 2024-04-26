@@ -473,7 +473,7 @@ let gameWordIndex = [(Math.round(getRandomindex()))]
 let gameWord = words[gameWordIndex];
 
 
-console.log(gameWord)
+// console.log(gameWord)
 
 //making the keyboard fucntional
 
