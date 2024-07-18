@@ -590,6 +590,8 @@ function checkLetters(evt){
             deleteCounter = -1;
 
         }
+        attemptTracker--
+        // i think the attempt counter should go here
     }
     else {
         alert("The word you sumbitted isn't included in our word list, please enter another 5 letter word");
@@ -632,8 +634,8 @@ function checkLetters(evt){
     // userGuess[userGuessTracker] = [];
     userGuessTracker++
     userLetterTracker = 0;
-    attemptTracker--
-
+    // attemptTracker--
+// i need the attmepts to only go thorugh if the attempt was valid
 
     if (correctLetters != 5){
         correctLetters = 0; 
